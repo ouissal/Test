@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<title>formulaire</title>
+</head>
+<body  ng-controller="ProduitController">
+<div class="container">
+
+
+ <form name="myForm">
+ 
+ <label>quel est votre premier choix ? </label> 
+			<!--  <input type ="text" ng-model="motCle"/> -->
+			<select name="motCle" ng-model="selectedProduct">
+				<option value="{{produit.designation}}" ng-repeat="produit in produits">{{produit.designation}}</option>
+			
+    </select><br>
+
+<label>quel est votre deuxième choix? </label>
+<select name="motCle" ng-model="selectedProduct2">
+				<option value="{{produit.designation}}" ng-repeat="produit in produits">{{produit.designation}}</option>
+			
+    </select><br>
+    
+    <button ng-click="valider()" class="btn btn-primary">Valider</button>
+    </form>
+    
+  </div>  
+    
+    
+<!-- charger angular -->
+
+<script type="text/javascript" src="Angular/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+</body>
+</html>
